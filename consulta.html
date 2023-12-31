@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONSULTA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            transition: background-color 0.5s;
+            /* Agregamos una transición para el color de fondo */
+        }
+
+        header,
+        footer {
+            background-color: #f1c2fd;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            width: 70px;
+            /* Ajusta el tamaño según sea necesario */
+            margin-right: 5px;
+            /* Espaciado entre la imagen y el texto */
+        }
+
+        nav {
+            background-color: rgb(177, 153, 253);
+            padding: 15px;
+            height: auto;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #b83eff;
+        }
+
+        section {
+            padding: 20px;
+            transition: opacity 0.5s;
+            /* Agregamos una transición para la opacidad */
+            text-align: justify;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                float: left;
+                width: 20%;
+                height: 100vh;
+            }
+
+            section {
+                margin-left: 25%;
+            }
+        }
+
+        video {
+            width: 90%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 36px;
+            line-height: 1.2;
+            /* Ajusta el tamaño y el espacio entre líneas según sea necesario */
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p,
+        li {
+            font-size: 18px;
+            line-height: 1.6;
+            /* Ajusta el tamaño y el espacio entre líneas según sea necesario */
+            color: #666;
+            text-align: justify;
+        }
+
+        footer {
+            background-color: rgb(112, 112, 252);
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: none;
+            justify-content: center;
+        }
+
+        footer img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        #pieDePagina {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Opcional: para centrar horizontalmente en el centro */
+        }
+
+        .redes-sociales {
+            display: flex;
+            justify-content: center;
+            /* Opcional: para centrar horizontalmente las imágenes */
+        }
+
+        .redes-sociales a {
+            margin: 5px;
+            /* Opcional: para agregar espacio entre las imágenes */
+        }
+
+        h5 {
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                display: block;
+            }
+
+            footer a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+
+        @keyframes floatAnimation {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Definición de la animación floatAnimation */
+        @keyframes floatAnimation {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos para las imágenes dentro de la sección */
+        section img {
+            width: 90%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            animation: floatAnimation 2s infinite ease-in-out;
+            /* Duración de la animación: 2 segundos, Repetir infinitamente */
+        }
+
+        #pregunta {
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .respuesta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .seleccionado {
+            max-height: 1000px;
+            /* ajusta según sea necesario */
+        }
+
+        .indicador {
+            display: inline-block;
+            margin-left: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .seleccionado .indicador {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .respuesta {
+                max-height: 1000px;
+                /* Ajusta según sea necesario */
+                overflow: auto;
+                /* Agregamos un desplazamiento para contenido que no cabe en la pantalla */
+            }
+        }
+
+        #imagenConAnimacion {
+            width: 200px;
+            /* Ajusta el ancho según tus necesidades */
+            transition: transform 0.3s;
+            /* Aplica una transición suave al transformar */
+        }
+
+        /* Estilos cuando el mouse está encima de la imagen */
+        #imagenConAnimacion:hover {
+            transform: scale(1.1);
+            /* Hace que la imagen se agrande ligeramente */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header onclick="toggleMenu()"> <!-- Agregamos la función 'toggleMenu()' al hacer clic en el encabezado -->
+        <img src="logo.png" alt="Logotipo">
+        <h1>MotivAcademy</h1>
+    </header>
+
+    <nav id="menu"> <!-- Damos un ID al menú para referenciarlo en el script -->
+        <a href="inicio.html">INICIO</a>
+        <a href="test1.html">TEST</a>
+        <a href="consulta.html">CONSULTA</a>
+    </nav>
+    <section>
+        <!-- Contenido de la página va aquí -->
+        <h2>
+            ¡UN NUEVO CAMINO HACIA EL DESARROLLO DE TU INTELIGENCIA EMOCIONAL! 🌟</h2>
+        <p>
+            ¡Bienvenido a un espacio dedicado exclusivamente a desbloquear tu potencial emocional y llevarte a nuevas
+            alturas de autenticidad y éxito! 🚀 En esta sección, te ofrecemos una orientación práctica y recomendaciones
+            fundamentales para el desarrollo de la inteligencia emocional. Explora a fondo todo este contenido 🕵️‍♂️,
+            para descubrir recursos enriquecedores que te acompañarán en este proceso de autodescubrimiento y
+            crecimiento emocional 🌱. ¡Prepárate para desatar todo tu poder emocional! 💪🌟</p>
+        <div onclick="toggleRespuesta('respuesta1')" id="pregunta">
+            <p><b>NOTA:</b><span class="indicador">▼</span></p>
+        </div>
+        <div class="respuesta" id="respuesta1">
+            <p>El contenido y material presentado en esta sección ha sido recopilado de fuentes especializadas que se
+                centran en el tema que hemos discutido anteriormente en el apartado de "<a
+                    href="inicio.html">INICIO</a>".</p>
+            <p>Para obtener más detalles y acceder directamente a las fuentes originales, hemos proporcionado enlaces a
+                los sitios web o recursos específicos de cada autor. Creemos en dar crédito donde crédito es
+                debido y animamos a nuestros visitantes a explorar más a fondo los trabajos de estos profesionales. 📚💡
+            </p>
+        </div>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+            <iframe id="login-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                src="https://www.youtube.com/embed/5NnrMtDDjbE?autoplay=1" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <h2>
+            ¡LLEVA TU SUPERPODER EMOCIONAL AL SIGUIENTE NIVEL! 🚀
+        </h2>
+        <p>
+            Desata todo tu potencial💪 y desarrlla tu inteligencia emocional con estos consejos 🌟🌈.
+        </p>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+            <iframe id="login-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                src="https://www.youtube.com/embed/XSiSH0jXRXw?autoplay=0" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div onclick="toggleRespuesta('respuesta2')" id="pregunta">
+            <h2>AUTOEVALUACIÓN<span class="indicador">▼</span></h2>
+        </div>
+        <div class="respuesta" id="respuesta2">
+            <p>¡Comenzamos subrayando la importancia de una autoevaluación, la cual puedes llevar a cabo mediante un
+                test específico disponible en la sección de "<a href="test1.html">TEST</a>" 📊. Dependiendo de los
+                resultados obtenidos. Sigue explorando el contenido para cultivar y fortalecer tu inteligencia
+                emocional 🌱💪.</p>
+            </p>
+        </div>
+
+        <div onclick="toggleRespuesta('respuesta3')" id="pregunta">
+            <p>
+            <h2>HÁBITOS<span class="indicador">▼</span></h2>
+        </div>
+        <div class="respuesta" id="respuesta3">
+            <p>Consultando el sitio de <a
+                    href="https://www.metlife.es/blog/salud-bienestar/mejorar-inteligencia-emocional/">MetLife</a>,
+                cultivar hábitos tiene beneficios significativos para el bienestar emocional y la calidad de vida.
+                Algunas de las prácticas recomendadas por el sitio son: </p>
+            <ul>
+                <li><b>Conócete a ti mismo: </b>Observa la manera en la que tus emociones afectan tus acciones, evalúa
+                    cómo de imparciales y justos eres. Si eres coherente con lo que piensas y haces, podrás moldear tus
+                    acciones sin ser completamente controlado por tus emociones. También tienes que estar abierto a
+                    críticas constructivas de amigos y colegas de trabajo; esto te ayudará a ver aquellos defectos que
+                    no eres capaz de identificar en ti mismo. 🤔👥</li>
+                <li><b>Sé optimista: </b>Afronta los problemas con la certeza de que serás capaz de superarlos.
+                    Aprovecha los momentos difíciles para aprender y crecer personalmente, presta atención a las buenas
+                    cualidades de las personas en lugar de concentrarte únicamente en los defectos y juzgar de forma
+                    preconcebida. 😊🌈</li>
+                <li><b>Empatiza con las personas: </b>Escuchar y considerar las emociones del otro y la situación en la
+                    que se encuentra, entender lo que está pensando y respetarlo sin cerrarse a una única posición,
+                    puede ayudarte en la resolución de problemas y búsqueda de soluciones. 🤝💖</li>
+            </ul>
+            <img src="habitos.jpeg" alt="">
+        </div>
+
+        <div onclick="toggleRespuesta('respuesta4')" id="pregunta">
+            <p>
+            <h2>DIARIO DE EMOCIONES<span class="indicador">▼</span></h2>
+        </div>
+        <div class="respuesta" id="respuesta4">
+            <p>El <a href="https://www.ieie.eu/">Instituto Europeo de Inteligencias Eficientes</a> (IEIE) destaca la
+                importancia de mantener un diario emocional para mejorar la inteligencia emocional. Escribir se
+                considera una terapia gratuita y liberadora que brinda la oportunidad de expresarse sinceramente. Se
+                recomienda dedicar una libreta exclusivamente al drenaje emocional, ya sea antes de dormir o cuando se
+                sienta necesario. 📓💬</p>
+            <img src="diario.gif" alt="Diario Animado">
+        </div>
+
+        <div onclick="toggleRespuesta('respuesta5')" id="pregunta">
+            <p>
+            <h2>¿DESARROLLAR LA INTELIGENCIA EMOCIONAL ¡PASO A PASO!?<span class="indicador">▼</span></h2>
+        </div>
+        <div class="respuesta" id="respuesta5">
+            <p>Según el <a href="https://www.iepp.es/desarrollar-inteligencia-emocional/">Instituto Europeo de
+                    Psicología
+                    Positiva</a> (IEPP), realizar un ejercicio práctico puede ayudarte a trabajar la inteligencia
+                emocional, centrándose en las fases de identificación, comprensión y manejo de las emociones, claves
+                para su desarrollo.</p>
+            <p>Si lo deseas, puedes llevar a cabo este ejercicio mediante el podcast de Spotify del canal <b>Practica La
+                    Psicología Positiva</b>, titulado "<a
+                    href="https://open.spotify.com/episode/48GFwZ3LXcFw3xlWnvmlRK?go=1&sp_cid=c77471ee07407e3aea1812f29845f990&utm_source=embed_player_p&utm_medium=desktop&nd=1&dlsi=e90c02a7ace24654">Desarrolla
+                    Tu Inteligencia Emocional - Podcast #6</a>".</p>
+            <img id="imagenConAnimacion" src="ppp.png" alt="Imagen con animación">
+            <ul>
+                <li><b>Fase de Identificación:</b> En esta etapa es esencial reconocer y nombrar nuestras emociones. A
+                    menudo, estamos tan inmersos en nuestras tareas diarias que pasamos por alto lo que sentimos. Este
+                    paso inicial requiere una atención consciente para conectarnos con nuestras emociones, evitando que
+                    el estrés y las tensiones pasen desapercibidos. Prestar atención a las señales emocionales es
+                    crucial para gestionar eficazmente nuestras reacciones. 🧐📝</li>
+                <li><b>Fase de Comprensión:</b> La comprensión implica analizar el propósito y la función de cada
+                    emoción experimentada. A veces, evitamos enfrentar emociones desagradables, pero comprender su
+                    origen y función es fundamental para utilizarlas de manera constructiva. Por ejemplo, al reconocer
+                    que el miedo a la opinión de los superiores indica una conexión emocional con el trabajo, podemos
+                    transformar esa emoción en motivación para mejorar nuestro desempeño. 🤔🤯</li>
+                <li><b>Fase de Manejo:</b> Por último, la fase de manejo es cuando utilizamos toda la información
+                    anterior en forma de conductas. Por ejemplo, cuando:
+                    <ol>
+                        <li>He identificado que siento miedo a la opinión de mis jefes por si me quedo sin trabajo.</li>
+                        <li>Que ese miedo me indica que este trabajo me gusta y que lo quiero mantener.</li>
+                        <li>Que el efecto del miedo sostenido es que me desconcentro, tengo peores resultados y el miedo
+                            se incrementa mucho más.</li>
+                        <li>Entonces decido cambiar el foco de mi pensamiento y de mis conductas, ponerlo en hacer mi
+                            trabajo bien, porque he analizado que cuando hago esto las cosas me salen mejor, mi mente se
+                            concentra y al final los resultados llegan.</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+
+
+        <div onclick="toggleRespuesta('respuesta6')" id="pregunta">
+            <p>
+            <h2>ACTIVIDADES LÚDICAS<span class="indicador">▼</span></h2>
+        </div>
+        <div class="respuesta" id="respuesta6">
+            <p>A modo práctico, puedes desarrollar tu Inteligencia Emocional llevando a cabo lo siguiente:</p>
+            <ul>
+                <li><b>Ejercicios de respiración consciente:</b> La respiración consciente, como en la meditación, puede
+                    ayudar a calmar la mente y aumentar la conciencia emocional. La conexión entre la respiración y las
+                    emociones es fundamental para gestionarlas de manera efectiva. 🌬️🧘‍♂️</li>
+                <li><b>Actividades relacionadas con el arte escénico: teatro, danza, música:</b> Participar en
+                    actividades artísticas fomenta la expresión emocional y la empatía al explorar diversos personajes y
+                    situaciones. Esto ayuda a entender y comunicar mejor las emociones tanto propias como ajenas. 🎭🕺🎶
+                </li>
+                <li><b>Juegos en los que sea importante manejar e interpretar emociones de los demás:</b> Juegos que
+                    involucren la interpretación de emociones, como juegos de roles o juegos de mesa estratégicos,
+                    pueden mejorar la inteligencia emocional al practicar la lectura de expresiones faciales y
+                    comportamientos. 🎲😃</li>
+                <li><b>Deportes como el Aikido, Judo, Karate, Kung Fu y Capoeira:</b> Estos deportes no solo desarrollan
+                    habilidades físicas, sino que también enfatizan la autodisciplina, el respeto y el control
+                    emocional. La práctica constante puede contribuir a una mayor autoconciencia emocional. 🥋🤸‍♂️</li>
+                <li><b>Tomar terapia o consulta psicológica para expresar tus emociones y pensamientos en un entorno
+                        seguro:</b> La terapia proporciona un espacio seguro para explorar y comprender emociones, así
+                    como aprender estrategias para manejarlas. El apoyo profesional puede ser fundamental para el
+                    crecimiento emocional. 🛋️🗣️</li>
+            </ul>
+            <img src="gif.gif" alt="gif">
+        </div>
+        <p>
+        <p>Descubre más sobre el poder de tus emociones siguiendo en las redes sociales a compañeros inspiradores en el
+            pie de página. Encuentra apoyo, motivación y consejos valiosos para conquistar tus desafíos académicos.
+            ¡Conéctate con comunidades que entienden y apoyan tu viaje! 🌐🤝</p>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br> <br>
+        <br>
+    </section>
+    <footer id="pieDePagina">
+        <h5>&copy; 2023 MotivAcademy. Desarrollado por los alumnos de la Academia de Ingeniería en Sistemas
+            Computacionales.</h5>
+        <div class="redes-sociales">
+            <a href="https://www.youtube.com/watch?v=se62UwCxUrI&ab_channel=FullPerception" target="_blank">
+                <img src="YOUTUBE.png" alt="YouTube">
+            </a>
+            <a href="https://www.tiktok.com/@pattimaciasec/video/7199767509480787206" target="_blank">
+                <img src="TIK_TOK.png" alt="TikTok">
+            </a>
+            <a href="https://www.facebook.com/InteligenciaEmocionalMexico?locale=es_LA" target="_blank">
+                <img src="FACEBOOK.png" alt="Facebook">
+            </a>
+        </div>
+    </footer>
+    <script>
+        // Utilizando la API de YouTube para reproducir el video después de cargar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            var player;
+            // Cargar la API de YouTube
+            var tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // Función llamada cuando se carga la API de YouTube
+            window.onYouTubeIframeAPIReady = function () {
+                player = new YT.Player('login-video', {
+                    events: {
+                        'onReady': onPlayerReady
+                    }
+                });
+            };
+
+            // Función llamada cuando el reproductor de YouTube está listo
+            function onPlayerReady(event) {
+                // Reproducir el video automáticamente
+                event.target.playVideo();
+            }
+        });
+    </script>
+    <script>
+        function toggleRespuesta(idRespuesta) {
+            var respuestas = document.querySelectorAll('.respuesta');
+            respuestas.forEach(function (respuesta) {
+                if (respuesta.id === idRespuesta) {
+                    respuesta.classList.toggle('seleccionado');
+                } else {
+                    respuesta.classList.remove('seleccionado');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

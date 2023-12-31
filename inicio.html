@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            transition: background-color 0.5s;
+            /* Agregamos una transición para el color de fondo */
+        }
+
+        header,
+        footer {
+            background-color: #f1c2fd;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header img {
+            width: 70px;
+            /* Ajusta el tamaño según sea necesario */
+            margin-right: 5px;
+            /* Espaciado entre la imagen y el texto */
+        }
+
+        nav {
+            background-color: rgb(177, 153, 253);
+            padding: 15px;
+            height: auto;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #b83eff;
+        }
+
+        section {
+            padding: 20px;
+            transition: opacity 0.5s;
+            /* Agregamos una transición para la opacidad */
+            text-align: justify;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                float: left;
+                width: 20%;
+                height: 100vh;
+            }
+
+            section {
+                margin-left: 25%;
+            }
+        }
+
+        video {
+            width: 90%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 36px;
+            line-height: 1.2;
+            /* Ajusta el tamaño y el espacio entre líneas según sea necesario */
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p,
+        li {
+            font-size: 18px;
+            line-height: 1.6;
+            /* Ajusta el tamaño y el espacio entre líneas según sea necesario */
+            color: #666;
+            text-align: justify;
+        }
+
+        footer {
+            background-color: rgb(112, 112, 252);
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: none;
+            justify-content: center;
+        }
+
+        footer img {
+            width: 30px;
+            margin: 0 10px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        #pieDePagina {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Opcional: para centrar horizontalmente en el centro */
+        }
+
+        .redes-sociales {
+            display: flex;
+            justify-content: center;
+            /* Opcional: para centrar horizontalmente las imágenes */
+        }
+
+        .redes-sociales a {
+            margin: 5px;
+            /* Opcional: para agregar espacio entre las imágenes */
+        }
+
+        h5 {
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                display: block;
+            }
+
+            footer a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+
+        @keyframes floatAnimation {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        section img {
+            width: 90%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            animation: floatAnimation 2s infinite ease-in-out;
+            /* Duración de la animación: 2 segundos, Repetir infinitamente */
+        }
+
+        #pregunta {
+            cursor: pointer;
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .respuesta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+
+        .seleccionado {
+            max-height: 1000px;
+            /* ajusta según sea necesario */
+        }
+
+        .indicador {
+            display: inline-block;
+            margin-left: 5px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .seleccionado .indicador {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .respuesta {
+                max-height: 1000px;
+                /* Ajusta según sea necesario */
+                overflow: auto;
+                /* Agregamos un desplazamiento para contenido que no cabe en la pantalla */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo.png" alt="Logotipo">
+        <h1>MotivAcademy</h1>
+    </header>
+    <nav>
+        <a href="inicio.html">INICIO</a>
+        <a href="test1.html">TEST</a>
+        <a href="consulta.html">CONSULTA</a>
+    </nav>
+
+    <section>
+        <!-- Contenido de la página va aquí -->
+        <h2>
+            ¡DESCUBRE TU POTENCIAL! 💪</h2>
+        <p>¡Hola y bienvenido a MotivAcademy! 🌟 Estamos aquí para apoyarte en tu camino académico y descubrir juntos el
+            poder de tu inteligencia emocional. En este espacio, encontrarás la inspiración y el apoyo que necesitas
+            para no solo completar tu licenciatura, sino también para destacar y crecer como individuo. 🚀</p>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+                <iframe
+                  id="login-video"
+                  style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                  src="https://www.youtube.com/embed/oxQM9kAJtXE?autoplay=1"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+
+        <h2>PRIMERO... ¿QUÉ ES LA INTELIGENCIA EMOCIONAL?🤔</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+            <iframe
+              id="login-video"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              src="https://www.youtube.com/embed/9J0qhl6ZaiU"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        <div onclick="toggleRespuesta('respuesta1')" id="pregunta">
+            <p>Según Daniel Goleman en su libro "La inteligencia emocional", refiere que es la capacidad de reconocer,
+                comprender y gestionar nuestras propias emociones, así como la habilidad para reconocer, influir y
+                relacionarnos eficazmente con las emociones de los demás. Sin embargo, se identifican cinco componentes
+                clave de la inteligencia emocional 🧠:<span class="indicador">▼</span></p>
+        </div>
+        <div class="respuesta" id="respuesta1">
+            <ol>
+                <li>Autoconocimiento emocional: La capacidad de reconocer y comprender las propias emociones. 🤔</li>
+                <li>Autorregulación emocional: La habilidad para gestionar y controlar las propias emociones, evitando
+                    reacciones impulsivas. 🧘‍♂️</li>
+                <li>Motivación: La capacidad de dirigir y mantener la atención y el impulso hacia metas significativas. 🚀</li>
+                <li>Empatía: La habilidad para comprender y compartir los sentimientos de los demás. ❤️</li>
+                <li>Habilidades sociales: La capacidad para construir relaciones saludables, comunicarse efectivamente y
+                    resolver conflictos. 🤝</li>
+            </ol>
+            <img src="goleman.jpg">
+            <p>
+                Goleman argumenta que la inteligencia emocional es fundamental para el éxito en la vida, tanto a nivel
+                personal como profesional. Destaca la importancia de equilibrar la inteligencia emocional con la
+                inteligencia cognitiva para lograr un desempeño óptimo en diversas situaciones. 🌟
+            </p>
+            <p>
+                Si deseas evaluar tu inteligencia emocional, te invitamos a dirigirte al apartado de "<a
+                    href="test.html">TEST</a>" para obtener una comprensión más profunda de tus fortalezas y debilidades
+                emocionales. 📊
+            </p>
+
+        </div>
+
+        <h2>¿QUÉ TAN IMPORTANTE ES LA INTELIGENCIA EMOCIONAL EN UNA LICENCIATURA?🎓💡</h2>
+        <div onclick="toggleRespuesta('respuesta2')" id="pregunta">
+            <p>Reconocemos la importancia crucial de la inteligencia emocional en el ámbito académico. Más
+                allá de las habilidades técnicas, la inteligencia emocional desempeña un papel fundamental en el éxito
+                durante una licenciatura. La capacidad de comprender y gestionar las emociones no solo impacta
+                positivamente en el rendimiento académico, sino que también contribuye al desarrollo personal y
+                profesional🧐.<span class="indicador">▼</span></p>
+        </div>
+        <div class="respuesta" id="respuesta2">
+            <p>
+                Daniel Goleman sostiene que la inteligencia emocional implica el reconocimiento y la gestión efectiva de
+                las emociones propias y ajenas. Argumenta que esta capacidad es esencial para el éxito en la vida
+                personal y profesional, a menudo superando a la inteligencia cognitiva tradicional. Sostiene que
+                cultivar la inteligencia emocional conlleva beneficios significativos, como una mayor satisfacción en
+                las relaciones, éxito académico y profesional, así como una salud mental mejorada. Su obra ha tenido un
+                impacto significativo, resaltando la importancia de las habilidades emocionales en el desarrollo humano
+                integral. 🌱</p>
+            <video autoplay loop muted>
+                <source src="cerebro3d.mp4" type="video/mp4">
+            </video>
+            <p>En el menú de la sección "<a href="consulta.html">CONSULTA</a>" en nuestro sitio, podrás explorar cómo
+                cultivar la inteligencia emocional
+                puede marcar la diferencia en tu experiencia universitaria y en tu camino hacia la graduación. Descubre
+                los
+                beneficios de la inteligencia emocional y cómo se integran en tu viaje académico. ¡Aprovecha esta
+                oportunidad para potenciar tu desarrollo personal y académico!🚀</p>
+        </div>
+        <p>Descubre más sobre el poder de tus emociones siguiendo en las redes sociales a compañeros inspiradores en el
+            pie de página. Encuentra apoyo, motivación y consejos valiosos para conquistar tus desafíos académicos.
+            ¡Conéctate con comunidades que entienden y apoyan tu viaje! 🌟</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+
+    <footer id="pieDePagina">
+        <h5>&copy; 2023 MotivAcademy. Desarrollado por los alumnos de la Academia de Ingeniería en Sistemas
+            Computacionales.</h5>
+        <div class="redes-sociales">
+            <a href="https://www.youtube.com/watch?v=se62UwCxUrI&ab_channel=FullPerception" target="_blank">
+                <img src="YOUTUBE.png" alt="YouTube">
+            </a>
+            <a href="https://www.tiktok.com/@pattimaciasec/video/7199767509480787206" target="_blank">
+                <img src="TIK_TOK.png" alt="TikTok">
+            </a>
+            <a href="https://www.facebook.com/InteligenciaEmocionalMexico?locale=es_LA" target="_blank">
+                <img src="FACEBOOK.png" alt="Facebook">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleRespuesta(idRespuesta) {
+            var respuestas = document.querySelectorAll('.respuesta');
+            respuestas.forEach(function (respuesta) {
+                if (respuesta.id === idRespuesta) {
+                    respuesta.classList.toggle('seleccionado');
+                } else {
+                    respuesta.classList.remove('seleccionado');
+                }
+            });
+        }
+    </script>
+    <script>
+        // Utilizando la API de YouTube para reproducir el video después de cargar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            var player;
+            // Cargar la API de YouTube
+            var tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // Función llamada cuando se carga la API de YouTube
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('login-video', {
+                    events: {
+                        'onReady': onPlayerReady
+                    }
+                });
+            }
+
+            // Función llamada cuando el reproductor de YouTube está listo
+            function onPlayerReady(event) {
+                // Reproducir el video automáticamente
+                event.target.playVideo();
+            }
+        });
+    </script>
+
+</html>
