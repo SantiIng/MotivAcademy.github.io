@@ -15,13 +15,14 @@
 
         header,
         footer {
-            background-color: #f1c2fd;
+            background-color: rgb(177, 153, 253);
             padding: 10px;
             color: #fff;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 22px;
         }
 
         header img {
@@ -32,9 +33,10 @@
         }
 
         nav {
-            background-color: rgb(177, 153, 253);
+            background-color: #f1c2fd;
             padding: 15px;
-            height: auto;
+            height: 100%;
+            position: fixed-;
         }
 
         nav a {
@@ -42,11 +44,13 @@
             padding: 15px;
             margin-bottom: 10px;
             text-decoration: none;
-            color: #ffffff;
+            color: #000000;
             font-weight: bold;
             border-radius: 5px;
             transition: background-color 0.3s;
             text-align: center;
+            font-size: 18px;
+            background-color:#ffffff;
         }
 
         nav a:hover {
@@ -80,7 +84,7 @@
         }
 
         h2 {
-            font-size: 36px;
+            font-size: 23px;
             line-height: 1.2;
             /* Ajusta el tamaño y el espacio entre líneas según sea necesario */
             margin-bottom: 20px;
@@ -101,9 +105,9 @@
             padding: 10px;
             color: #fff;
             text-align: center;
-            position: fixed;
+            position: static;
             bottom: 0;
-            width: 100%;
+            width: 95.2%;
             display: none;
             justify-content: center;
         }
@@ -137,6 +141,7 @@
         }
 
         h5 {
+            font-size: small    ;
             text-align: justify;
         }
 
@@ -163,22 +168,6 @@
             }
         }
 
-        /* Definición de la animación floatAnimation */
-        @keyframes floatAnimation {
-            0% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        /* Estilos para las imágenes dentro de la sección */
         section img {
             width: 90%;
             height: auto;
@@ -250,19 +239,20 @@
         <a href="inicio.html">INICIO</a>
         <a href="test1.html">TEST</a>
         <a href="consulta.html">CONSULTA</a>
+        <a href="acerade.html">ACERCA DE</a>
     </nav>
     <section>
         <!-- Contenido de la página va aquí -->
         <h2>
-            ¡UN NUEVO CAMINO HACIA EL DESARROLLO DE TU INTELIGENCIA EMOCIONAL! 🌟</h2>
+            ¡Prepárate para desatar todo tu poder emocional! 💪🌟</h2>
         <p>
             ¡Bienvenido a un espacio dedicado exclusivamente a desbloquear tu potencial emocional y llevarte a nuevas
             alturas de autenticidad y éxito! 🚀 En esta sección, te ofrecemos una orientación práctica y recomendaciones
             fundamentales para el desarrollo de la inteligencia emocional. Explora a fondo todo este contenido 🕵️‍♂️,
             para descubrir recursos enriquecedores que te acompañarán en este proceso de autodescubrimiento y
-            crecimiento emocional 🌱. ¡Prepárate para desatar todo tu poder emocional! 💪🌟</p>
+            crecimiento emocional 🌱. </p>
         <div onclick="toggleRespuesta('respuesta1')" id="pregunta">
-            <p><b>NOTA:</b><span class="indicador">▼</span></p>
+            <p><b>Nota:</b><span class="indicador">▼</span></p>
         </div>
         <div class="respuesta" id="respuesta1">
             <p>El contenido y material presentado en esta sección ha sido recopilado de fuentes especializadas que se
@@ -280,11 +270,8 @@
                 allowfullscreen></iframe>
         </div>
         <h2>
-            ¡LLEVA TU SUPERPODER EMOCIONAL AL SIGUIENTE NIVEL! 🚀
+            ¡Desarrolla tu inteligencia emocional con estos consejos! 🚀
         </h2>
-        <p>
-            Desata todo tu potencial💪 y desarrlla tu inteligencia emocional con estos consejos 🌟🌈.
-        </p>
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
             <iframe id="login-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
                 src="https://www.youtube.com/embed/XSiSH0jXRXw?autoplay=0" frameborder="0"
@@ -292,7 +279,7 @@
                 allowfullscreen></iframe>
         </div>
         <div onclick="toggleRespuesta('respuesta2')" id="pregunta">
-            <h2>AUTOEVALUACIÓN<span class="indicador">▼</span></h2>
+            <h2>Autoevaluación<span class="indicador">▼</span></h2>
         </div>
         <div class="respuesta" id="respuesta2">
             <p>¡Comenzamos subrayando la importancia de una autoevaluación, la cual puedes llevar a cabo mediante un
@@ -304,11 +291,10 @@
 
         <div onclick="toggleRespuesta('respuesta3')" id="pregunta">
             <p>
-            <h2>HÁBITOS<span class="indicador">▼</span></h2>
+            <h2>Hábitos<span class="indicador">▼</span></h2>
         </div>
         <div class="respuesta" id="respuesta3">
-            <p>Consultando el sitio de <a
-                    href="https://www.metlife.es/blog/salud-bienestar/mejorar-inteligencia-emocional/">MetLife</a>,
+            <p>Consultando el sitio de "MetLife",
                 cultivar hábitos tiene beneficios significativos para el bienestar emocional y la calidad de vida.
                 Algunas de las prácticas recomendadas por el sitio son: </p>
             <ul>
@@ -325,30 +311,34 @@
                     que se encuentra, entender lo que está pensando y respetarlo sin cerrarse a una única posición,
                     puede ayudarte en la resolución de problemas y búsqueda de soluciones. 🤝💖</li>
             </ul>
+            <p>Para consultar presiona " <a
+                href="https://www.metlife.es/blog/salud-bienestar/mejorar-inteligencia-emocional/">Aqui</a>"</p>
             <img src="habitos.jpeg" alt="">
         </div>
 
         <div onclick="toggleRespuesta('respuesta4')" id="pregunta">
             <p>
-            <h2>DIARIO DE EMOCIONES<span class="indicador">▼</span></h2>
+            <h2>Diario de emociones<span class="indicador">▼</span></h2>
         </div>
         <div class="respuesta" id="respuesta4">
-            <p>El <a href="https://www.ieie.eu/">Instituto Europeo de Inteligencias Eficientes</a> (IEIE) destaca la
+            <p>El Instituto Europeo de Inteligencias Eficientes (IEIE) destaca la
                 importancia de mantener un diario emocional para mejorar la inteligencia emocional. Escribir se
                 considera una terapia gratuita y liberadora que brinda la oportunidad de expresarse sinceramente. Se
                 recomienda dedicar una libreta exclusivamente al drenaje emocional, ya sea antes de dormir o cuando se
                 sienta necesario. 📓💬</p>
+                <p>Para consultar presiona "<a href="https://www.ieie.eu/">Aquí</a>"</p>
             <img src="diario.gif" alt="Diario Animado">
         </div>
 
         <div onclick="toggleRespuesta('respuesta5')" id="pregunta">
             <p>
-            <h2>¿DESARROLLAR LA INTELIGENCIA EMOCIONAL ¡PASO A PASO!?<span class="indicador">▼</span></h2>
+            <h2>Desarrolla
+                tu inteligencia emocional con podcast<span class="indicador">▼</span></h2>
         </div>
         <div class="respuesta" id="respuesta5">
-            <p>Según el <a href="https://www.iepp.es/desarrollar-inteligencia-emocional/">Instituto Europeo de
+            <p>Según el Instituto Europeo de
                     Psicología
-                    Positiva</a> (IEPP), realizar un ejercicio práctico puede ayudarte a trabajar la inteligencia
+                    Positiva (IEPP), realizar un ejercicio práctico puede ayudarte a trabajar la inteligencia
                 emocional, centrándose en las fases de identificación, comprensión y manejo de las emociones, claves
                 para su desarrollo.</p>
             <p>Si lo deseas, puedes llevar a cabo este ejercicio mediante el podcast de Spotify del canal <b>Practica La
@@ -380,12 +370,13 @@
                     </ol>
                 </li>
             </ul>
+            <p>Para consultar presiona "<a href="https://www.iepp.es/desarrollar-inteligencia-emocional/">Aquí</a>"</p>
         </div>
 
 
         <div onclick="toggleRespuesta('respuesta6')" id="pregunta">
             <p>
-            <h2>ACTIVIDADES LÚDICAS<span class="indicador">▼</span></h2>
+            <h2>Actividades lúdicas<span class="indicador">▼</span></h2>
         </div>
         <div class="respuesta" id="respuesta6">
             <p>A modo práctico, puedes desarrollar tu Inteligencia Emocional llevando a cabo lo siguiente:</p>
@@ -416,12 +407,7 @@
             pie de página. Encuentra apoyo, motivación y consejos valiosos para conquistar tus desafíos académicos.
             ¡Conéctate con comunidades que entienden y apoyan tu viaje! 🌐🤝</p>
         </p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br> <br>
-        <br>
+
     </section>
     <footer id="pieDePagina">
         <h5>&copy; 2023 MotivAcademy. Desarrollado por los alumnos de la Academia de Ingeniería en Sistemas

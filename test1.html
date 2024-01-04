@@ -15,13 +15,14 @@
 
         header,
         footer {
-            background-color: #f1c2fd;
+            background-color: rgb(177, 153, 253);
             padding: 10px;
             color: #fff;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 22px;
         }
 
         header img {
@@ -32,9 +33,10 @@
         }
 
         nav {
-            background-color: rgb(177, 153, 253);
+            background-color: #f1c2fd;
             padding: 15px;
-            height: auto;
+            height: 100%;
+            position: fixed-;
         }
 
         nav a {
@@ -42,11 +44,13 @@
             padding: 15px;
             margin-bottom: 10px;
             text-decoration: none;
-            color: #ffffff;
+            color: #000000;
             font-weight: bold;
             border-radius: 5px;
             transition: background-color 0.3s;
             text-align: center;
+            font-size: 18px;
+            background-color: #ffffff;
         }
 
         nav a:hover {
@@ -80,7 +84,7 @@
         }
 
         h2 {
-            font-size: 36px;
+            font-size: 23px;
             line-height: 1.2;
             /* Ajusta el tamaño y el espacio entre líneas según sea necesario */
             margin-bottom: 20px;
@@ -101,9 +105,9 @@
             padding: 10px;
             color: #fff;
             text-align: center;
-            position: fixed;
+            position: static;
             bottom: 0;
-            width: 100%;
+            width: 95.2%;
             display: none;
             justify-content: center;
         }
@@ -137,6 +141,7 @@
         }
 
         h5 {
+            font-size: small;
             text-align: justify;
         }
 
@@ -253,11 +258,12 @@
         <a href="inicio.html">INICIO</a>
         <a href="test1.html">TEST</a>
         <a href="consulta.html">CONSULTA</a>
+        <a href="acerade.html">ACERCA DE</a>
     </nav>
 
     <section>
         <!-- Contenido de la página va aquí -->
-        <h2>TEST CORTO DE INTELIGENCIA EMOCIONAL🧠📊</h2>
+        <h2>¡Test corto de inteligencia emocional!🧠📊</h2>
         <p>
             ¡Bienvenido al Test Corto de Inteligencia Emocional! 🌈🧠 <br>
             En esta sección, te invitamos a explorar y evaluar tu capacidad para reconocer, comprender y gestionar tus
@@ -278,9 +284,9 @@
             ¡Te animamos a explorar aún más tu inteligencia emocional con un test completo! :D
         </p>
         <p>
-            INSTRUCIONES:
+            Instrucciones:
         </p>
-        
+
         <ul>
             <li>
                 Responde cada pregunta de manera honesta y reflexiva. 🤔
@@ -294,7 +300,7 @@
         </ul>
 
         <div onclick="toggleRespuesta('respuesta1')" id="pregunta">
-            <p>RECOMENDACIONES:<span class="indicador">▼</span></p>
+            <p>Recomendaciones:<span class="indicador">▼</span></p>
         </div>
         <div class="respuesta" id="respuesta1">
             <ul>
@@ -351,7 +357,7 @@
                     <label><input type="radio" name="q5" value="3">Me cuesta mucho adaptarme</label>
                 </div>
 
-                <button type="button" onclick="calcularResultado()">Obtener Resultado</button>
+                <button type="button" onclick="calcularResultado()">Obtener resultado</button>
             </form>
 
             <div id="result-container" style="display: none;">
@@ -363,14 +369,6 @@
         <p>Descubre más sobre el poder de tus emociones siguiendo en las redes sociales a compañeros inspiradores en el
             pie de página. Encuentra apoyo, motivación y consejos valiosos para conquistar tus desafíos académicos.
             ¡Conéctate con comunidades que entienden y apoyan tu viaje! 🌟</p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
     </section>
 
     <footer id="pieDePagina">
@@ -468,11 +466,13 @@
             } else if (resultado === 'Falta contestar alguna pregunta') {
                 resultElement.textContent = 'Por favor, responde todas las preguntas antes para obtener tu resultado.';
             } else {
-                resultElement.textContent = 'Tu nivel de inteligencia emocional es: ' + resultado;
+                resultElement.innerHTML = 'Aproximadamente tu nivel de inteligencia emocional es: ' + resultado+'.' +
+                    ' ¡Consulta el TEST EMOCIONAL para explorar aún más tu inteligencia emocional :D!';
             }
 
             resultContainer.style.display = 'block';
         }
+        
     </script>
     <script>
         // Utilizando la API de YouTube para reproducir el video después de cargar la página
